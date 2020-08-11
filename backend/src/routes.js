@@ -8,6 +8,7 @@ const routes = express.Router();
 
 const alunoController = require("./controllers/aluno");
 const postagemController = require("./controllers/postagem");
+const comentarioController = require("./controllers/comentario");
 
 //rotas de usuario
 routes.get("/alunos", alunoController.listar);
@@ -16,7 +17,11 @@ routes.post("/alunos", alunoController.store);
 
 
 //rotas de postagens
+routes.get("/postagens", postagemController.index);
 routes.post("/postagens", postagemController.store);
 routes.delete("/postagens/:id", postagemController.delete);
+
+//rotas de comentarios
+route.post("/postagens/:postId/comentarios", comentarioController.store);
 
 module.exports = routes;
