@@ -16,9 +16,9 @@ class Comentario extends Model{
         //um comentario pertence a uma postagem
         this.belongsTo(models.Postagem);
         //um comentario tbm pertence a um aluno
-        this.belongsTo(models.Aluno);
+        this.belongsTo(models.Aluno, {foreignKey: "aluno_id"});
 
     }
 }
 
-module.exports = Aluno;
+module.exports = Comentario;

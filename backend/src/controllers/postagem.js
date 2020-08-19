@@ -21,8 +21,7 @@ module.exports = {
     },
 
     async store(req, res){
-        const token = req.headers.authorization;
-        const [Bearer, created_aluno_id] = token.split(" ");
+        const created_aluno_id = req.alunoId;
 
         const { titulo, descricao, imagem, gists } = req.body;
 
@@ -50,8 +49,7 @@ module.exports = {
 
     async delete(req,res){
         //pegando o id do aluno que esta logado
-        const token = req.headers.authorization;
-        const [Bearer, created_aluno_id] = token.split(" ");
+        const created_aluno_id = req.alunoId;
 
         //pegando o id do post a apagar
         const { id } = req.params;
